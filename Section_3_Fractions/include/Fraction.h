@@ -8,10 +8,14 @@ class Fraction {
     int b; // denominator
 
     int gcd(int a, int b);
+    void simplify();
 
     public:
     // Constructor
     Fraction(int numerator, int denominator);
+    // concise constructor
+    // Fraction(int numerator, int denominator) : a(numerator), b(denominator) {}
+
     // Destructor
     ~Fraction(){}
 

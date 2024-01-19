@@ -37,6 +37,8 @@ class Student
     string name;
     int id;
     // add a pointer to the department here
+
+    // THE REASON is: we don't need to create new Object of Department on each students
 };
 
 class Department

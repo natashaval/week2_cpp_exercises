@@ -25,6 +25,19 @@ class Reporter
 
 int main()
 {
-    
+    // raw pointer
+    // why still use raw pointer? because it is faster in memory management than smart pointer; because in smart pointer, they need to "memorize" the link
+    // while in raw pointer, it is managed by the user
+    Reporter *reporterOne = new Reporter("1");
+
+    // unique pointer
+    std::unique_ptr<Reporter> reporterTwo = std::make_unique<Reporter>("2");
+
+    // normal initialization
+    Reporter reporterThree("3");
+
+    // to delete raw pointer manually, if not it will cause a memory leak
+    delete reporterOne;
+
     return 0;
 }
