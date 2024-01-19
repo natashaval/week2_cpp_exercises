@@ -4,9 +4,15 @@
 
 // write your print vector function here
 
-int countMultiplesOfFive(/*take a vector of ints here*/)
+int countMultiplesOfFive(std::vector<int> v)
 {
-
+    int count = 0;
+    for (int i = 0; i < v.size(); i++) {
+        if (v.at(i) % 5 == 0) {
+            count++;
+        }
+    }
+    return count;
 }
 
 

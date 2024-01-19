@@ -5,7 +5,7 @@
 
 //declare your print vector function here
 
-int countMultiplesOfFive(/*take a vector of ints here*/);
+int countMultiplesOfFive(std::vector<int> v);
 
 void addElements(std::vector<int>, int, int);
 
