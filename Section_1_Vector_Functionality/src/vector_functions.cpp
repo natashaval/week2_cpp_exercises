@@ -25,7 +25,7 @@ int countMultiplesOfFive(std::vector<int> v)
     // return std::count_if(v.begin(), v.end(), [](int num) -> bool { return num % 5 == 0; });
 }
 
-void addElements(std::vector<int> v, int x, int n)
+void addElements(std::vector<int> &v, int x, int n)
 {
     for (int i = 0; i < n; i++)
     {

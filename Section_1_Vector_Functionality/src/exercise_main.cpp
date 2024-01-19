@@ -12,7 +12,9 @@ bool check_add_elements()
         return false;
     }
     for(auto &&i : starting_vector)
+    // for (auto i : starting_vector)
     {
+        std::cout << "--" << i << " ";
         if(i != 5)
         {
             std::cout << "Incorrect value of " << i << " found." << std::endl;
@@ -21,11 +23,14 @@ bool check_add_elements()
     }
 
     // all checks passed
+    std::cout << "Vector has " << starting_vector.size() << " elements." << std::endl;
     return true;
 }
 
 int main()
 {
+    check_add_elements();
+
     std::vector<int> some_multiples = {1, 5, 3, 10, 0, 2};
     int count = countMultiplesOfFive(some_multiples);
     std::cout << (count == 3 ? "Check 1 passed" : "Failed first check, should find 3 multiples and found " + std::to_string(count)) << std::endl;
