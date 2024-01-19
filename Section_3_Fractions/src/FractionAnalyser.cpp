@@ -11,6 +11,11 @@ int main()
     Fraction frac(a, b);
 
     std::cout << frac.toString() << " = " << frac.toDouble() << std::endl;
-    
+    std::cout << "Reciprocal = " << frac.reciprocal().toString() << std::endl;
+
+    int mult;
+    std::cout << "To multiply, enter a number: ";
+    std::cin >> mult;
+    std::cout << "Multiply result = " << frac.multiply(mult).toString() << std::endl;
     return 0;
 }
