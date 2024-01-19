@@ -32,11 +32,11 @@ int main()
     
     std::vector<int> no_multiples = {2, 3, 9, 18, 47};
     count = countMultiplesOfFive(no_multiples);
-    std::cout << (count == 3 ? "Check 1 passed" : "Failed second check, should find 0 multiples and found " + std::to_string(count)) << std::endl;
+    std::cout << (count == 0 ? "Check 2 passed" : "Failed second check, should find 0 multiples and found " + std::to_string(count)) << std::endl;
 
     std::vector<int> empty_vector;
     count = countMultiplesOfFive(empty_vector);
-    std::cout << (count == 3 ? "Check 1 passed" : "Failed third check, should find 0 multiples and found " + std::to_string(count)) << std::endl;
+    std::cout << (count == 0 ? "Check 3 passed" : "Failed third check, should find 0 multiples and found " + std::to_string(count)) << std::endl;
     
     return 0;
 }
