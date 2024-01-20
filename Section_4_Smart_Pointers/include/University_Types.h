@@ -17,16 +17,14 @@ class Department;
 class Student
 {
     public:
-    Student(const std::string &n) : name(n), id(max_id++) {}
+    // declare constructor and destructor function in .cpp
+    Student(const std::string &n);
+    ~Student();
 
-    ~Student()
-    {
-        cout << "Student " << name << " destroyed." << endl;
-    }
+    void setDepartment(std::shared_ptr<Department> &departmentPointer);
+    string getName();
 
-    
-
-    int getId() {return id;}
+    int getId() const;
 
     private:
     // Static variable means same value shared by every object in class
@@ -37,19 +35,21 @@ class Student
     string name;
     int id;
     // add a pointer to the department here
-
+    std::shared_ptr<Department> department;
     // THE REASON is: we don't need to create new Object of Department on each students
 };
 
 class Department
 {
     public:
-    Department(const std::string &n) : name(n) {}
-
-    ~Department()
-    {
+    // declare constructor and destructor function in .h
+    Department(const std::string &n) : name(n) {
+        cout << "Department " << name << " created." << endl;
+    }
+    ~Department() {
         cout << "Department " << name << " destroyed." << endl;
     }
+    string getName();
 
     private:
     string name;
