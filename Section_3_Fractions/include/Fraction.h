@@ -20,7 +20,7 @@ class Fraction {
     ~Fraction(){}
 
     Fraction reciprocal();
-    Fraction multiply(int mult);
+    Fraction multiply(int mult) const;
     double toDouble();
-    std::string toString();
+    std::string toString() const;
 };

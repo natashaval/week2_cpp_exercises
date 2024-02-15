@@ -1,6 +1,7 @@
 #include <memory>
 #include <iostream>
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -35,7 +36,7 @@ class Student
     string name;
     int id;
     // add a pointer to the department here
-    std::shared_ptr<Department> department;
+    std::weak_ptr<Department> department;
     // THE REASON is: we don't need to create new Object of Department on each students
 };
 
@@ -51,7 +52,11 @@ class Department
     }
     string getName();
 
+    void deregisterStudent(const int id);
+    void addStudent(const std::shared_ptr<Student> new_student);
+
     private:
     string name;
     // add a vector or map of pointers to students here
+    map<int, weak_ptr<Student>> students;
 };

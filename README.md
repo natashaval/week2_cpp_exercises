@@ -7,6 +7,8 @@ This folder contains the exercise templates for [week 2 of Research Computing wi
 [UCL Reading Week 2](https://moodle.ucl.ac.uk/mod/url/view.php?id=5928437)
 You should open this folder in VSCode; this is particularly important if you are using Docker as the top level folder contains the .devcontainer.
 
+[Week 2 Solutions](https://hackmd.io/@comp0210-cpp-redesign/Hk9Ymc4F6)
+
 You can then move into each sub-folder in the terminal to compile and run the different exercises, as described in the HackMD document. 
 
 How to run Section 1:
@@ -29,8 +31,18 @@ How to run Section 4:
 1. Go to the folder `cd Section_4_Smart_Pointers/`
 2. Smart Pointers: run `g++ -o build/smartPointer src/smart_pointers.cpp`
 3. `./build/smartPointer`
+4. University: run `g++ -o build/University_example src/* -Iinclude`
+5. `./build/University_example`
 
 What is the benefit of using pointers?
 - used in OOP for polymorphism, ...
 search examples
 
+Section 4 solutions, why weak pointers:
+We have the following considerations:
+
+1. We should avoid memory leaks due to circular references. This means we can't use shared pointers for both classes.
+2. It doesn't make much sense for instances of either class to own the other. They only need to refer to one another, but their lifetimes are essentially independent.
+3. Pointers may be invalidated if one a Student or Department instance is destroyed and other objects are pointing to it.
+
+The best solution is this case is probably weak pointers.
